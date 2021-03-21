@@ -12,7 +12,7 @@ pipeline {
                 }
                 stage('parallel 2') {
                     steps {
-                        sh "run-tests.sh"
+                        echo "parallel 2"
                     }
                 }
             }
