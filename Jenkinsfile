@@ -12,7 +12,7 @@ pipeline {
                       echo: {
                         echo "echo parallel 1"
                       }
-                  }
+                }
                 stage('parallel 2') {
                       test: {
                         sh 'pytest'
@@ -20,8 +20,7 @@ pipeline {
                       echo: {
                         echo "echo parallel 2"
                       }
-                  }
-                )
+                }
 			}
         }
     }
