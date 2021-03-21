@@ -2,26 +2,20 @@
 pipeline {
      agent any
 
-    stages {
-        stage("Test") {
- 			parallel {
+        stages {
+        stage('Run Tests') {
+            parallel {
                 stage('parallel 1') {
-                      test: {
+                    steps {
                         sh 'pytest'
-                      }
-                      echo: {
-                        echo "echo parallel 1"
-                      }
+                    }
                 }
                 stage('parallel 2') {
-                      test: {
-                        sh 'pytest'
-                      }
-                      echo: {
-                        echo "echo parallel 2"
-                      }
+                    steps {
+                        sh "run-tests.sh"
+                    }
                 }
-			}
+            }
         }
     }
 }
